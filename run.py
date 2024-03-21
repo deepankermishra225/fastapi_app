@@ -1,17 +1,9 @@
 import uvicorn
-import gunicorn
 
 if __name__ == '__main__':
-    # uvicorn.run(
-    #     "src.app:app",
-    #     host="0.0.0.0",
-    #     port=8000,
-    #     reload=True
-    # )
-    gunicorn.run(
+    uvicorn.run(
         "src.app:app",
-         host="0.0.0.0",
-         workers=3,
-         worker_class=uvicorn.workers.UvicornWorker,
-         
+        host="0.0.0.0",
+        port=8000,
+        reload=True
     )
