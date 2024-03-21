@@ -1,10 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 app = FastAPI()
 
 @app.get("/")
-def welcome():
-    return "<h1>Welcome</h1>"
+def welcome(request: Request):
+    headers = request.headers
+    return str(headers)
 
 @app.get("/first_route")
 def first_route():
